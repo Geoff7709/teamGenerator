@@ -5,7 +5,6 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 const validator = require("email-validator");
-const emailValidator = validator.validate(this.email)
 
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
@@ -33,6 +32,7 @@ const questions = [
         name: "email",
         type: "input",
         message: "What is their employee email address?",
+        // validate: (answers) => validator.validate(answers.email)
     },
     {
         name: "officeNumber",
@@ -59,6 +59,7 @@ const questions = [
 const gatherTeam = () => {
     inquirer.prompt(questions)
     .then((answers) => {
+        // console.log(validator.validate(answers.email))
         if (answers.role === "Manager") {
             let employee = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
             employees.push(employee)
@@ -71,7 +72,7 @@ const gatherTeam = () => {
         }if (answers.anotherMember === true){
             gatherTeam()
         }else {
-            fs.writeFile( 'index.html', render(employees), function (err) {
+            fs.writeFile( outputPath, render(employees), function (err) {
                 if (err) throw err;
                 console.log('Saved!');
               })
