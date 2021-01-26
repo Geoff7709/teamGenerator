@@ -32,7 +32,15 @@ const questions = [
         name: "email",
         type: "input",
         message: "What is their employee email address?",
-        // validate: (answers) => validator.validate(answers.email)
+        validate: (email) => {
+            valid = validator.validate(email)
+            if (valid) {
+                return true
+            }else {
+                console.log(`\n Please enter a valid email.`)
+                return false
+            }
+        }
     },
     {
         name: "officeNumber",
