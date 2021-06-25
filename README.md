@@ -14,7 +14,7 @@
 
   [Questions](#questions)
 
-  [Lisence](#lisence)
+  [License](#license)
 
   ## Description
   This is a command line interface application that generates a finished html file containing cards for each member of the team. These cards include name, contact, employee info, and role-specific information. They also include links for use of contact and employee info.
@@ -39,7 +39,7 @@
   For further questions please feel free to email the developers:
 
   geoffzimmerman23@gmail.com
-  ## Lisence
+  ## License
   Use of this software is regulated under the following lisence:
 
   [MIT](https://opensource.org/licenses/MIT)
